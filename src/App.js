@@ -1,18 +1,14 @@
 import React from 'react';
+import Products from './Products'
+import Nav from './components/Nav'
 import './App.css';
-import Product  from './components/product'
-import productData from './data/products.json'
 
 function App() {
-  
-  const mappedProducts =  productData.map(product => {
-    return  <Product name={product.name} />
-  })
 
   return (
     <div className="App">
-      <h1>Hello world</h1>
-     {mappedProducts}
+      <Nav />
+    <Products />
     </div>
   );
 }
