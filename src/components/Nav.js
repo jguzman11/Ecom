@@ -1,26 +1,30 @@
 import React from 'react';
-import { Pane, Text, Button, Heading, majorScale, Paragraph, Link, Strong, Small, Code, Icon, Pre, UnorderedList, ListItem, TextInput, SearchInput} from 'evergreen-ui'
 import '../App.css';
+import { IconButton } from 'evergreen-ui'
+import { Link } from 'react-router-dom'
 
-
-function Nav(props) {
-    return   (
-    <div class="nav-container">
-            <ul class="nav-list nav-list-larger">
-                <li class="nav-item nav-item-hidden">
-                </li>
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="product.html" class="nav-link">Browse</a>
-                </li>
-                <li class="nav-item">
-                    <a href="contact.html" class="nav-link">Contact</a>
-                </li>
-            </ul>
-    </div>
+function Nav() {
+    return (
+        <header>
+            <div class="nav-container">
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item" src="/public/images/7O4KicksLogo.png"></li>
+                        <Link to='/'>
+                            <li class="nav-item">Home</li>
+                        </Link>
+                        <Link to='/Products'>
+                            <li class="nav-item">Products</li>
+                        </Link>
+                        <Link to='/Contact'>
+                            <li class="nav-item">Contact</li>
+                        </Link>
+                        <li class="nav-item"><IconButton icon="shopping-cart" size={10} color="success"  >Hi Evergreen!</IconButton></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
     );
-  }
+}
 
-  export default Nav;
+export default Nav;

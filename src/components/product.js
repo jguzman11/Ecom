@@ -1,21 +1,28 @@
 import React from 'react';
-import { Pane, Text, Button, Heading, majorScale, Paragraph, Link, Strong, Small, Code, Icon, Pre, UnorderedList, ListItem, TextInput, SearchInput} from 'evergreen-ui'
+import { Pane, Text, Button, Heading, majorScale, Paragraph, Strong} from 'evergreen-ui'
 
-const style = {
-    height:'100px',
-    width:'150px'
+const imgSize = {
+    height:'6.25rem',
+    width:'9.37rem'
 }
+const box ={
+    width: '21.875rem',
+    height: '17.5rem',
+    float: "left",
+    backgroundColor: "white"
+}
+
 
 const Product = ({name, price, description, img}) => {
     return (
 
-    <div>
-
-        {/* <p>Hello product {name}</p> */}
+  
+    <div className="container">
+     
         <Pane clearFix >
-            <Pane width={340} height={280} elevation={4} marginRight={10} marginTop={10} float="left" backgroundColor="white" >
+            <Pane style={box} elevation={4} marginLeft={70} marginTop={10}  >
                 <Heading> {name} </Heading>
-                <div><img style={style} src={img}></img></div>
+                <div><img style={imgSize} src={img}></img></div>
                 <Text><Strong color="skyblue"> {price} </Strong></Text> 
                 <Paragraph> {description} </Paragraph>
                 <Button appearance="primary" height={majorScale(4)} marginTop={20} >Purchase</Button>
@@ -23,9 +30,7 @@ const Product = ({name, price, description, img}) => {
         </Pane>
 
     </div>
-
     )
-  
 }
 
 export default Product
